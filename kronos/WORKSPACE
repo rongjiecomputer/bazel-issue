@@ -1,0 +1,14 @@
+load("//kronos_registry:repo.bzl", "kronos_registry_repo")
+kronos_registry_repo(
+    name = "kronos_registry",
+    opengl_commit = "a24f3f7a4c924fdbc666024f99c70e5b8e34c819",
+    egl_commit = "5804dc63f9ca70d5e9a6e31addec6936e2950ee4",
+)
+
+new_http_archive(
+    name = "glfw",
+    build_file = "glfw/BUILD.bazel",
+    strip_prefix = "glfw-3.2.1",
+    urls = ["https://github.com/glfw/glfw/archive/3.2.1.zip"],
+    sha256 = "0c623f65a129c424d0fa45591694fde3719ad4a0955d4835182fda71b255446f",
+)
