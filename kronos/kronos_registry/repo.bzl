@@ -39,25 +39,3 @@ kronos_registry_repo = repository_rule(
         "egl_commit": attr.string(mandatory=True),
     },
 )
-
-def _download_impl(ctx):
-    print(ctx.attr.url)
-    print(dir(ctx))
-    print(dir(ctx.actions))
-    print(dir(ctx.fragments.cpp))
-    print(ctx.fragments.cpp.ar_executable)
-    print(dir(ctx.fragments.platform))
-
-_download_header = rule(
-    implementation = _download_impl,
-    attrs = {
-        "url": attr.string(),
-    },
-    #outputs = {
-    #    "header": "%{name}.h",
-    #},
-    fragments = ["cpp", "platform"],
-)
-
-def download(name, url):
-  _download_header(name=name, url=url)
