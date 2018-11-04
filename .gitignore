@@ -1,1 +1,5 @@
 bazel-*
+*.exe
+*.lib
+*.exp
+*.obj
