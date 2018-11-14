@@ -1,0 +1,29 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# Both can be local_repository too
+http_archive(
+    name = "com_google_absl",
+    sha256 = "3cf6132129ba87f0781c383bfaf381b7174b5818e81fffcc5d04bb451154f0f2",
+    strip_prefix = "abseil-cpp-f95179062eb65ce40895cc76f1398cce25394369",
+    urls = [
+        "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/f95179062eb65ce40895cc76f1398cce25394369.tar.gz",
+        "https://github.com/abseil/abseil-cpp/archive/f95179062eb65ce40895cc76f1398cce25394369.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "com_google_googletest",
+    sha256 = "353ab86e35cea1cd386115279cf4b16695bbf21b897bfbf2721cf4cb5f64ade8",
+    strip_prefix = "googletest-997d343dd680e541ef96ce71ee54a91daf2577a0",
+    urls = [
+        "https://mirror.bazel.build/github.com/google/googletest/archive/997d343dd680e541ef96ce71ee54a91daf2577a0.zip",
+        "https://github.com/google/googletest/archive/997d343dd680e541ef96ce71ee54a91daf2577a0.zip",
+    ],
+)
+
+http_archive(
+    name = "com_github_google_benchmark",
+    urls = ["https://github.com/google/benchmark/archive/16703ff83c1ae6d53e5155df3bb3ab0bc96083be.zip"],
+    strip_prefix = "benchmark-16703ff83c1ae6d53e5155df3bb3ab0bc96083be",
+    sha256 = "59f918c8ccd4d74b6ac43484467b500f1d64b40cc1010daa055375b322a43ba3",
+)
